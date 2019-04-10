@@ -1,0 +1,23 @@
+ifneq ($(LIBRARY),)
+EXTRA_FLAGS=-fpic -fno-rtti
+endif
+
+OBJECTS=$(SOURCES:.cpp=.o)
+
+.PHONY: all
+
+all: $(LIBRARY) $(EXECUTABLE)
+
+$(LIBRARY): $(OBJECTS)
+	clang++ -shared -o $@ $^
+
+$(EXECUTABLE): $(OBJECTS)
+	clang++ $^ -o $@ `llvm-config --ldflags --libs --system-libs` 
+
+%.o: %.cpp
+	clang++ -c $(EXTRA_FLAGS) `llvm-config --cppflags` $^ -o $@
+
+.PHONY: clean
+
+clean:
+	rm -f $(LIBRARY) $(EXECUTABLE) $(OBJECTS)

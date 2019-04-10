@@ -1,0 +1,7 @@
+*.so
+*.o
+*.opt.bc
+*.bc
+*.opt
+*.opt.ll
+*.exe
