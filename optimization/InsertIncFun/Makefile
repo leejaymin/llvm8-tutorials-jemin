@@ -1,4 +1,4 @@
 LIBRARY=InsertInc.so
-SOURCES=HelloFunction.cpp InsertInc.cpp
+SOURCES=InsertInc.cpp
 
 include ../../Makefile.common

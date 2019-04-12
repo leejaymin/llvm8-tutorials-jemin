@@ -1,4 +1,4 @@
-LIBRARY=callCount.so
-SOURCES=callCount.cpp
+LIBRARY=InstCallCount.so
+SOURCES=InstCallCount.cpp
 
 include ../../Makefile.common

@@ -11,7 +11,7 @@ namespace {
     static char ID; // Pass identification, replacement for typeid
     HelloFunction() : FunctionPass(ID) {}
 
-    bool runOnFunction(Function &M) override;
+    bool runOnFunction(Function &F) override;
 
     void getAnalysisUsage(AnalysisUsage &AU) const override;
   };
