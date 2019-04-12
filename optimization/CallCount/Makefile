@@ -1,4 +1,4 @@
 LIBRARY=CallCount.so
-SOURCES=CallCount.cpp HelloModule.cpp
+SOURCES=CallCount.cpp
 
 include ../../Makefile.common

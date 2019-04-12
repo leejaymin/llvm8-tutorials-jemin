@@ -51,7 +51,7 @@ bool HelloModule::runOnModule(Module &M) {
   BB.getTerminator()->eraseFromParent();
   
   BasicBlock *RetBB = BasicBlock::Create(Context, "retbb", F);
-  IRBuilde<> RetBBBuilder(RetBB);
+  IRBuilder<> RetBBBuilder(RetBB);
   RetBBBuilder.CreateRetVoid();
 
   IRBuilder<> EntryBBBuilder(&BB);

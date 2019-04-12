@@ -1,4 +1,4 @@
 LIBRARY=MyLoopAnalysis.so
-SOURCES=MyLoopAnalysis.cpp HelloModule.cpp
+SOURCES=MyLoopAnalysis.cpp
 
 include ../../Makefile.common
