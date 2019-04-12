@@ -75,7 +75,7 @@ for.cond3.preheader
 ### IR Optimization (Part 2)
 
 ![스크린샷 2019-04-10 오후 11.04.10](https://i.imgur.com/0PlLu6F.png)
-- 소스코드 (InsertIncFun)[https://github.com/leejaymin/llvm8-tutorials-jemin/tree/master/optimization/InsertIncFun]
+- 소스코드 [InsertIncFun](https://github.com/leejaymin/llvm8-tutorials-jemin/tree/master/optimization/InsertIncFun)
 - 실행 방법
 ```bash
 clang -c -emit-llvm test.c -o test.bc
@@ -158,7 +158,7 @@ vi test.opt.ll
 ```
 `test.opt.ll`파일을 보면   `Instruction`들에 `naming`이 숫자로 순서대로 Naming된 것을 알 수 있다.
 
-### Call count per an instruction
+### Practice 번외-1: Call count per an instruction
 
 - 소스코드 [DynamicCallCountNamer](https://github.com/leejaymin/llvm8-tutorials-jemin/tree/master/optimization/DynamicCallCountNamer)
 - 실행 방법
@@ -182,7 +182,7 @@ Dynamic call count:
 ```
 
 
-### Instruction Dependence Analysis
+### Practice 번외-2: Instruction Dependence Analysis
 
 - 소스코드 [DependenceAnalysis](https://github.com/leejaymin/llvm8-tutorials-jemin/tree/master/optimization/DependenceAnalysis)
 - 실행 방법
@@ -225,7 +225,7 @@ Anti:
   %call = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str, i32 0, i32 0), i32 %2)
 ```
 
-### Alias Analysis
+### Practice 번외-3: Alias Analysis
 
 - 소스코드 [AliasAnalysis](https://github.com/leejaymin/llvm8-tutorials-jemin/tree/master/optimization/AliasAnalysis)
 - 실행 방법
