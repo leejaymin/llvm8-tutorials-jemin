@@ -1,6 +1,47 @@
 # LLVM-8.0.0 Tutorials #
 ---
 
+## Prerequisite ##
+
+### 소스코드 다운후 빌드해서 설치하는 방법 ###
+
+Download source files
+- LLVM source code
+- Clang source code
+
+unzip and rename
+```bash
+tar xf llvm-8.0.0.src.tar.xz
+tar xf cfe.8.0.0.src.tar.xz
+mv llvm-8.0.0.src llvm # 반드시 이름을 llvm으로 한다.
+
+# move to llvm/tools directory
+mv cfe-8.0.0.src clang
+mv clang ./llvm/tools/
+
+# llvm 디렉터리 밖에서 llvm-objects 디렉터리 생성
+mkdir llvm-objects
+cmake ../llvm && make -j4
+cmake -DCMAKE_INSTALL_PREFIX=../llvm-install/ -P cmake_install.cmake
+```
+
+### setting for environment variables
+```bash
+export LLVM_BASE_DIR=/home/jemin/development/llvm/
+
+export LLVM_DIR=${LLVM_BASE_DIR}
+export LLVM_SRC=${LLVM_BASE_DIR}/llvm
+export LLVM_SRC_ROOT=${LLVM_BASE_DIR}/llvm
+export LLVM_ROOT=${LLVM_BASE_DIR}/llvm
+export LLVM_OBJ=${LLVM_BASE_DIR}/llvm-objects
+export LLVM_OBJ_DIR=${LLVM_BASE_DIR}/llvm-objects
+export LLVM_OBJ_ROOT=${LLVM_BASE_DIR}/llvm-objects
+export LLVM_INSTALL_DIR=${LLVM_BASE_DIR}/llvm-install
+export PATH=$LLVM_INSTALL_DIR/bin:$PATH
+```
+
+
+
 ## Day-1 ##
 
 ### IR Optimization (Part I)
